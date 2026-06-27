@@ -27,6 +27,13 @@ export const metadata: Metadata = {
     "municipal corporation services",
     "VP Solutions",
   ],
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
   openGraph: {
     title: "VP Solutions – Reliable Workforce. Smart Infrastructure.",
     description:

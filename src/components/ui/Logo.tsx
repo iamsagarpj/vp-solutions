@@ -1,95 +1,95 @@
 interface LogoProps {
+  /** Rendered pixel width (height scales automatically via aspect ratio). */
   size?: number;
 }
 
 /**
- * VP Solutions pictorial mark.
+ * VP Solutions — geometric monogram mark.
  *
- * Design language:
- *  • Gold sun + rays  →  Solar EPC / renewable energy
- *  • Rooftop solar panels  →  On-site solar installation
- *  • Building with windows  →  Facility management / infrastructure
- *  • Three person silhouettes  →  Manpower supply / workforce
- *  • Navy palette  →  Government-grade trust
+ * Recreates the reference logo:
+ *  • Three pixel-art squares  →  tech / digital identity
+ *  • Bold angular "V"         →  letter V, rendered with an inner groove (evenodd)
+ *  • Bold geometric "P"       →  letter P with open bowl, fused to V's right arm
+ *  • Electric-blue palette    →  #2563eb (primary) + #1d4ed8 (depth)
+ *
+ * ViewBox: 56 × 48  (slightly wider than tall, matching the mark proportions)
  */
-export default function Logo({ size = 44 }: LogoProps) {
+export default function Logo({ size = 48 }: LogoProps) {
+  // Maintain aspect ratio: width = size * (56/48)
+  const w = Math.round(size * (56 / 48));
+  const h = size;
+
   return (
     <svg
-      width={size}
-      height={size}
-      viewBox="0 0 44 44"
+      width={w}
+      height={h}
+      viewBox="0 0 56 48"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      aria-label="VP Solutions logo"
+      aria-label="VP Solutions logo mark"
     >
-      {/* ── Background ─────────────────────────────────────────── */}
-      <rect width="44" height="44" rx="10" fill="#0B1F3A" />
+      {/* ── Dark-navy background ───────────────────────────────── */}
+      <rect width="56" height="48" rx="11" fill="#0d1b2e" />
 
-      {/* ── Sun ────────────────────────────────────────────────── */}
-      <circle cx="22" cy="13.5" r="5.5" fill="#E5B04A" />
+      {/* ── Pixel dots — top-left tech accent ─────────────────── */}
+      <rect x="3.5" y="3.5" width="4.5" height="4.5" rx="1"   fill="#93c5fd" />
+      <rect x="9.5" y="3.5" width="4.5" height="4.5" rx="1"   fill="#60a5fa" opacity="0.65" />
+      <rect x="3.5" y="9.5" width="4.5" height="4.5" rx="1"   fill="#60a5fa" opacity="0.38" />
 
-      {/* Sun rays — 5 rays covering upper semicircle */}
-      <g stroke="#E5B04A" strokeWidth="1.8" strokeLinecap="round">
-        {/* top */}
-        <line x1="22" y1="5" x2="22" y2="7" />
-        {/* upper-right */}
-        <line x1="27.4" y1="8.1" x2="26.1" y2="9.4" />
-        {/* right */}
-        <line x1="29.5" y1="13.5" x2="27.5" y2="13.5" />
-        {/* upper-left */}
-        <line x1="16.6" y1="8.1" x2="17.9" y2="9.4" />
-        {/* left */}
-        <line x1="14.5" y1="13.5" x2="16.5" y2="13.5" />
-      </g>
+      {/* ── "V" letterform ────────────────────────────────────── */}
+      {/*
+          evenodd trick: outer downward triangle MINUS inner smaller
+          downward triangle = two thick diagonal arm strokes = letter V.
 
-      {/* ── Rooftop solar panels ────────────────────────────────── */}
-      {/* Left panel */}
-      <rect x="13.5" y="21.5" width="7.5" height="4" rx="0.7" fill="#E5B04A" opacity="0.9" />
-      <line x1="17.25" y1="21.5" x2="17.25" y2="25.5" stroke="#0B1F3A" strokeWidth="0.7" />
-      <line x1="13.5"  y1="23.5" x2="21"   y2="23.5" stroke="#0B1F3A" strokeWidth="0.7" />
-
-      {/* Right panel */}
-      <rect x="23" y="21.5" width="7.5" height="4" rx="0.7" fill="#E5B04A" opacity="0.9" />
-      <line x1="26.75" y1="21.5" x2="26.75" y2="25.5" stroke="#0B1F3A" strokeWidth="0.7" />
-      <line x1="23"    y1="23.5" x2="30.5"  y2="23.5" stroke="#0B1F3A" strokeWidth="0.7" />
-
-      {/* Panel gap highlight (thin gold divider between panels) */}
-      <line x1="21.5" y1="21.5" x2="22.5" y2="21.5" stroke="#E5B04A" strokeWidth="0.5" opacity="0.4" />
-
-      {/* ── Building body ───────────────────────────────────────── */}
-      <rect
-        x="13.5" y="25.5"
-        width="17" height="12"
-        rx="1"
-        fill="rgba(255,255,255,0.05)"
-        stroke="rgba(255,255,255,0.38)"
-        strokeWidth="1.2"
+          Outer  → (4, 14) (34, 14) (20, 43)
+          Inner  → (12,14) (26, 14) (20, 37)   ← cuts the groove
+      */}
+      <path
+        fillRule="evenodd"
+        fill="#2563eb"
+        d="M 4,14  L 34,14 L 20,43 Z
+           M 12,14 L 26,14 L 20,37 Z"
       />
 
-      {/* Windows — upper row */}
-      <rect x="15.5" y="27.5" width="5"  height="3.5" rx="0.5" fill="#E5B04A" opacity="0.75" />
-      <rect x="23.5" y="27.5" width="5"  height="3.5" rx="0.5" fill="#E5B04A" opacity="0.75" />
+      {/* Diagonal "cut" highlight on V's top-left edge — modern bevel */}
+      <line
+        x1="4" y1="14" x2="10" y2="14"
+        stroke="#60a5fa" strokeWidth="1.2" strokeLinecap="round"
+        opacity="0.55"
+      />
 
-      {/* Door */}
-      <rect x="19.5" y="32" width="5" height="5.5" rx="0.8" fill="white" opacity="0.32" />
-      {/* Door knob */}
-      <circle cx="23.5" cy="34.8" r="0.6" fill="white" opacity="0.5" />
+      {/* ── "P" letterform ────────────────────────────────────── */}
+      {/*
+          Compound path (evenodd):
+            Outer = P stem (x 28-35, full height) + D-bowl (x 35-52, upper half)
+            Inner = semicircular hole inside the bowl
 
-      {/* ── Workforce — three person silhouettes ────────────────── */}
-      {/* Person 1 */}
-      <circle cx="13" cy="40.2" r="1.5" fill="#E5B04A" opacity="0.85" />
-      <path d="M10.5 43 Q13 41 15.5 43" stroke="#E5B04A" strokeWidth="1.1" fill="none" strokeLinecap="round" opacity="0.85" />
+          P's left stem deliberately overlaps V's right arm for the
+          connected-monogram look (P drawn on top, deeper blue).
+      */}
+      <path
+        fillRule="evenodd"
+        fill="#1d4ed8"
+        d="
+          M 28,12 L 28,43 L 35,43 L 35,30
+          Q 52,30 52,21
+          Q 52,12 35,12
+          Z
+          M 35,18 Q 44,18 44,21 Q 44,24 35,24 Z
+        "
+      />
 
-      {/* Person 2 (center) */}
-      <circle cx="22" cy="40.2" r="1.5" fill="#E5B04A" />
-      <path d="M19.5 43 Q22 41 24.5 43" stroke="#E5B04A" strokeWidth="1.1" fill="none" strokeLinecap="round" />
+      {/* Subtle inner-bowl accent (lighter edge on P's circular opening) */}
+      <path
+        d="M 35,18 Q 44,18 44,21 Q 44,24 35,24"
+        stroke="#3b82f6" strokeWidth="0.7" fill="none" opacity="0.5"
+      />
 
-      {/* Person 3 */}
-      <circle cx="31" cy="40.2" r="1.5" fill="#E5B04A" opacity="0.85" />
-      <path d="M28.5 43 Q31 41 33.5 43" stroke="#E5B04A" strokeWidth="1.1" fill="none" strokeLinecap="round" opacity="0.85" />
-
-      {/* Subtle ground line */}
-      <line x1="8" y1="43.5" x2="36" y2="43.5" stroke="rgba(255,255,255,0.12)" strokeWidth="0.8" />
+      {/* ── Bottom accent line ─────────────────────────────────── */}
+      <line
+        x1="6" y1="45.5" x2="50" y2="45.5"
+        stroke="#2563eb" strokeWidth="0.7" opacity="0.25"
+      />
     </svg>
   );
 }

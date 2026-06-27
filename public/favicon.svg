@@ -1,0 +1,25 @@
+<svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="56" height="56" rx="13" fill="#0d1b2e"/>
+
+  <!-- Pixel dots -->
+  <rect x="4"  y="4"  width="5" height="5" rx="1.2" fill="#93c5fd"/>
+  <rect x="11" y="4"  width="5" height="5" rx="1.2" fill="#60a5fa" opacity="0.65"/>
+  <rect x="4"  y="11" width="5" height="5" rx="1.2" fill="#60a5fa" opacity="0.38"/>
+
+  <!-- V letterform (evenodd: outer triangle minus inner groove) -->
+  <path fill-rule="evenodd" fill="#2563eb"
+    d="M 4,16 L 36,16 L 21,46 Z
+       M 12,16 L 28,16 L 21,40 Z"/>
+
+  <!-- P letterform (evenodd: stem + bowl minus open inner) -->
+  <path fill-rule="evenodd" fill="#1d4ed8"
+    d="M 29,14 L 29,46 L 37,46 L 37,33
+       Q 52,33 52,24
+       Q 52,14 37,14
+       Z
+       M 37,20 Q 45,20 45,24 Q 45,28 37,28 Z"/>
+
+  <!-- Bottom accent line -->
+  <line x1="6" y1="52" x2="50" y2="52" stroke="#2563eb" stroke-width="1" opacity="0.3"/>
+</svg>
