@@ -1,0 +1,102 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import { MapPin, Calendar } from "lucide-react";
+import SectionHeader from "@/components/ui/SectionHeader";
+import { projects } from "@/data/projects";
+import { Project } from "@/types";
+
+type Category = "all" | "govt" | "private" | "solar" | "municipal";
+
+const filters: { label: string; value: Category }[] = [
+  { label: "All Projects", value: "all" },
+  { label: "Government", value: "govt" },
+  { label: "Private Sector", value: "private" },
+  { label: "Solar", value: "solar" },
+  { label: "Municipal", value: "municipal" },
+];
+
+export default function Projects() {
+  const [active, setActive] = useState<Category>("all");
+  const filtered = projects.filter(
+    (p: Project) => active === "all" || p.category === active
+  );
+
+  return (
+    <section id="projects" className="bg-white py-24 px-8">
+      <div className="max-w-7xl mx-auto">
+        <SectionHeader
+          label="Our Work"
+          title="Proven Track Record Across Sectors"
+          subtitle="Delivering complex projects for government bodies and private clients with precision and scale."
+        />
+
+        <div className="flex gap-2.5 mb-10 flex-wrap">
+          {filters.map((f) => (
+            <button
+              key={f.value}
+              onClick={() => setActive(f.value)}
+              className={`px-5 py-2 rounded-full text-[13px] font-semibold border transition-all ${
+                active === f.value
+                  ? "bg-navy text-white border-navy"
+                  : "bg-white text-slate-500 border-slate-200 hover:bg-navy hover:text-white hover:border-navy"
+              }`}
+            >
+              {f.label}
+            </button>
+          ))}
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <AnimatePresence>
+            {filtered.map((p, i) => (
+              <motion.div
+                key={p.id}
+                initial={{ opacity: 0, scale: 0.96 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.96 }}
+                transition={{ delay: i * 0.06 }}
+                className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className="relative h-52 overflow-hidden">
+                  <Image
+                    src={p.image}
+                    alt={p.title}
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                  <span className="absolute top-3 left-3 bg-gold text-white text-[10px] font-bold px-2.5 py-1 rounded tracking-widest uppercase">
+                    {p.badge}
+                  </span>
+                  <span className="absolute top-3 right-3 bg-navy/75 text-white/80 text-[10px] px-2.5 py-1 rounded backdrop-blur-sm">
+                    {p.sector}
+                  </span>
+                </div>
+                <div className="p-5">
+                  <h3 className="font-heading font-bold text-navy text-[15px] mb-2.5">
+                    {p.title}
+                  </h3>
+                  <div className="flex gap-4 mb-2.5 flex-wrap">
+                    <span className="flex items-center gap-1.5 text-[12px] text-slate-400">
+                      <MapPin size={12} />
+                      {p.location}
+                    </span>
+                    <span className="flex items-center gap-1.5 text-[12px] text-slate-400">
+                      <Calendar size={12} />
+                      {p.duration}
+                    </span>
+                  </div>
+                  <p className="text-[13px] text-slate-500 leading-relaxed">
+                    {p.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </div>
+      </div>
+    </section>
+  );
+}
