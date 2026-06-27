@@ -5,7 +5,7 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 
 const contactItems = [
-  { icon: MapPin,  label: "Registered Office", value: "VP Solutions, Maharashtra, India" },
+  { icon: MapPin,  label: "Registered Office", value: "Shop No 4, Kapila Park, Maharashtra 415001" },
   { icon: Phone,   label: "Phone / WhatsApp",  value: "+91 98765 43210" },
   { icon: Mail,    label: "Email",              value: "info@vpsolutions.in" },
   { icon: Clock,   label: "Office Hours",       value: "Mon – Sat: 9:00 AM – 6:30 PM" },
@@ -69,8 +69,17 @@ export default function Contact() {
               ))}
             </div>
 
-            <div className="mt-5 sm:mt-6 h-40 sm:h-44 rounded-xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center text-slate-400 text-sm gap-2 border border-slate-200">
-              <MapPin size={18} /> Map – Maharashtra, India
+            <div className="mt-5 sm:mt-6 rounded-xl overflow-hidden border border-slate-200 shadow-sm h-48 sm:h-56 lg:h-64">
+              <iframe
+                title="VP Solutions Office Location"
+                src="https://www.google.com/maps?q=Shop+No+4,+Kapila+Park,+Satara,+Maharashtra+415001&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </div>
 

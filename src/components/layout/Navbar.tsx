@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Logo from "@/components/ui/Logo";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -38,20 +39,12 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-navy/96 backdrop-blur-md border-b border-gold/20">
       <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 h-[60px] sm:h-[66px] lg:h-[70px] flex items-center justify-between">
         {/* Logo */}
-        <Link href="#home" className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-          <svg width="34" height="34" className="sm:w-[38px] sm:h-[38px] lg:w-[40px] lg:h-[40px]" viewBox="0 0 42 42" fill="none">
-            <rect width="42" height="42" rx="9" fill="#1A3560" />
-            <path
-              d="M21 8L29.5 13.5V21C29.5 26.2 25.2 30.5 21 32.5C16.8 30.5 12.5 26.2 12.5 21V13.5L21 8Z"
-              stroke="#E5B04A" strokeWidth="1.8" fill="none"
-            />
-            <path
-              d="M17.5 20.5L20.5 23.5L25 17"
-              stroke="#E5B04A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-            />
-          </svg>
+        <Link href="#home" className="flex items-center gap-2.5 sm:gap-3 flex-shrink-0">
+          <div className="w-[34px] sm:w-[38px] lg:w-[42px] flex-shrink-0">
+            <Logo size={42} />
+          </div>
           <div>
-            <strong className="block font-heading text-[15px] sm:text-[16px] lg:text-[17px] font-extrabold text-white tracking-wide">
+            <strong className="block font-heading text-[15px] sm:text-[16px] lg:text-[17px] font-extrabold text-white tracking-wide leading-tight">
               VP Solutions
             </strong>
             <span className="text-[9px] sm:text-[10px] tracking-[2px] text-gold-light uppercase">

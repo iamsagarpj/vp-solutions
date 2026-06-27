@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Logo from "@/components/ui/Logo";
 
 export default function Footer() {
   return (
@@ -9,18 +10,8 @@ export default function Footer() {
 
           {/* Brand — full width on mobile */}
           <div className="col-span-2 sm:col-span-2 md:col-span-1">
-            <Link href="#home" className="flex items-center gap-3 mb-4">
-              <svg width="34" height="34" className="sm:w-[38px] sm:h-[38px]" viewBox="0 0 42 42" fill="none">
-                <rect width="42" height="42" rx="9" fill="#1A3560" />
-                <path
-                  d="M21 8L29.5 13.5V21C29.5 26.2 25.2 30.5 21 32.5C16.8 30.5 12.5 26.2 12.5 21V13.5L21 8Z"
-                  stroke="#E5B04A" strokeWidth="1.8" fill="none"
-                />
-                <path
-                  d="M17.5 20.5L20.5 23.5L25 17"
-                  stroke="#E5B04A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-                />
-              </svg>
+            <Link href="#home" className="flex items-center gap-2.5 sm:gap-3 mb-4">
+              <Logo size={38} />
               <div>
                 <strong className="block font-heading text-[16px] sm:text-[17px] font-extrabold text-white">
                   VP Solutions
