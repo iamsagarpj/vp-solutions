@@ -10,7 +10,7 @@ export const partners: Partner[] = [
     email: "vijay.pawar@vpsolutions.in",
     phone: "+91 98765 43210",
     location: "Satara, Maharashtra",
-    tags: ["Govt. Contracts", "Manpower Ops", "MSCB Relations", "Project Execution"],
+    tags: ["Govt. Contracts", "Manpower Ops", "MSEB Relations", "Project Execution"],
     initials: "VP",
     image: "https://picsum.photos/seed/partner1male/800/180",
   },

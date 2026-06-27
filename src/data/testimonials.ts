@@ -4,7 +4,7 @@ export const testimonials: Testimonial[] = [
   {
     text: "VP Solutions has been a reliable partner for our meter reading operations for over 5 years. Their workforce is disciplined, punctual, and the daily MIS reports are thorough. A professional organisation we trust completely.",
     name: "S. Kulkarni",
-    role: "Executive Engineer, MSCB Nashik",
+    role: "Executive Engineer, MSEB Nashik",
     initials: "SK",
   },
   {

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import SectionHeader from "@/components/ui/SectionHeader";
 
 const clients = [
-  { name: "MSCB", full: "Maharashtra State Co-operative Bank" },
+  { name: "MSEB", full: "Maharashtra State Co-operative Bank" },
   { name: "MSEDCL", full: "Maharashtra State Electricity Distribution" },
   { name: "Smart City", full: "Aurangabad Smart City Mission" },
   { name: "NMMC", full: "Navi Mumbai Municipal Corporation" },

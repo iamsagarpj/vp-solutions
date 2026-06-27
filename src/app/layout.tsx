@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "VP Solutions delivers end-to-end manpower, solar EPC, facility management, and smart infrastructure services across government departments, electricity boards, municipalities, and private enterprises in Maharashtra since 2005.",
   keywords: [
     "manpower supply Maharashtra",
-    "meter reading MSCB",
+    "meter reading MSEB",
     "solar EPC contractor",
     "facility management Pune",
     "government outsourcing India",

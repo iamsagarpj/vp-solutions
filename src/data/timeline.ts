@@ -13,7 +13,7 @@ export const timelineItems: TimelineItem[] = [
   },
   {
     year: "2013",
-    event: "MSCB Partnership",
+    event: "MSEB Partnership",
     detail: "Onboarded as a trusted service partner for Maharashtra State Electricity Board — initiating meter reading at scale.",
   },
   {

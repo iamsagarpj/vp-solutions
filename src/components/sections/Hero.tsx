@@ -8,7 +8,7 @@ const trustItems = [
   { icon: ShieldCheck, label: "ISO Certified" },
   { icon: Users, label: "1000+ Workforce" },
   { icon: Building2, label: "50+ Govt. Projects" },
-  { icon: Zap, label: "MSCB Empanelled" },
+  { icon: Zap, label: "MSEB Empanelled" },
 ];
 
 export default function Hero() {
@@ -100,7 +100,7 @@ export default function Hero() {
             </div>
             <div>
               <strong className="block text-[11px] sm:text-[13px] font-extrabold text-navy font-heading">
-                MSCB Certified Partner
+                MSEB Certified Partner
               </strong>
               <span className="text-[9px] sm:text-[11px] text-slate-400">Active Since 2013</span>
             </div>

@@ -3,13 +3,13 @@ import { Project } from "@/types";
 export const projects: Project[] = [
   {
     id: "mscb",
-    title: "MSCB Meter Reading – Nashik Division",
+    title: "MSEB Meter Reading – Nashik Division",
     location: "Nashik, MH",
     duration: "3 Years",
     description:
       "Monthly meter reading, consumer survey, and billing data verification for 500,000+ consumers across Nashik division.",
     badge: "Government",
-    sector: "MSCB",
+    sector: "MSEB",
     category: "govt",
     image: "https://picsum.photos/seed/mscbproj/600/210",
   },

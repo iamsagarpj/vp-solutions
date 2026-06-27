@@ -111,7 +111,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/[0.07] pt-4 sm:pt-5 flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-3 text-[11px] sm:text-[12px] text-white/[0.26] text-center sm:text-left">
-          <p>© 2025 VP Solutions. All rights reserved. Established 2005, Maharashtra, India.</p>
+          <p>© 2026 VP Solutions. All rights reserved. Established 2005, Maharashtra, India.</p>
           <p className="hidden sm:block">Reliable Workforce. Smart Infrastructure. Trusted Government Partner.</p>
         </div>
       </div>
