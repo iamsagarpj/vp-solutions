@@ -1,5 +1,8 @@
 import { Project } from "@/types";
 
+const px = (id: number) =>
+  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=800`;
+
 export const projects: Project[] = [
   {
     id: "mscb",
@@ -11,7 +14,7 @@ export const projects: Project[] = [
     badge: "Government",
     sector: "MSEB",
     category: "govt",
-    image: "https://picsum.photos/seed/mscbproj/600/210",
+    image: px(11924298), // electricity meter close-up / technician
   },
   {
     id: "municipal-clean",
@@ -23,7 +26,7 @@ export const projects: Project[] = [
     badge: "Municipal",
     sector: "Nagar Palika",
     category: "municipal",
-    image: "https://picsum.photos/seed/municipalproj/600/210",
+    image: px(9462336), // cleaning/sanitation workers in action
   },
   {
     id: "solar-pune",
@@ -35,7 +38,7 @@ export const projects: Project[] = [
     badge: "Solar EPC",
     sector: "Industrial",
     category: "solar",
-    image: "https://picsum.photos/seed/solarproj/600/210",
+    image: px(6961122), // large solar panel array / field installation
   },
   {
     id: "smart-city",
@@ -47,7 +50,7 @@ export const projects: Project[] = [
     badge: "Government",
     sector: "Smart City",
     category: "govt",
-    image: "https://picsum.photos/seed/surveyproj/600/210",
+    image: px(36930873), // field survey team with equipment
   },
   {
     id: "it-park",
@@ -59,7 +62,7 @@ export const projects: Project[] = [
     badge: "Private",
     sector: "Corporate",
     category: "private",
-    image: "https://picsum.photos/seed/itparkfm/600/210",
+    image: px(1313534), // modern IT park / corporate office building
   },
   {
     id: "govt-office",
@@ -71,6 +74,6 @@ export const projects: Project[] = [
     badge: "Municipal",
     sector: "Govt",
     category: "municipal",
-    image: "https://picsum.photos/seed/govtoffice/600/210",
+    image: px(19250066), // government building / large facility exterior
   },
 ];

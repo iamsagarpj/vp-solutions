@@ -4,15 +4,18 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import SectionHeader from "@/components/ui/SectionHeader";
 
+const px = (id: number, w = 800) =>
+  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
+
 const galleryImages = [
-  { src: "https://picsum.photos/seed/g1vp/600/400",  alt: "Solar installation site",  wide: true },
-  { src: "https://picsum.photos/seed/g2vp/400/300",  alt: "Meter reading team" },
-  { src: "https://picsum.photos/seed/g3vp/400/300",  alt: "Field operations" },
-  { src: "https://picsum.photos/seed/g4vp/400/300",  alt: "Municipal cleaning" },
-  { src: "https://picsum.photos/seed/g5vp/400/300",  alt: "Housekeeping staff" },
-  { src: "https://picsum.photos/seed/g6vp/600/400",  alt: "Government project",        wide: true },
-  { src: "https://picsum.photos/seed/g7vp/400/300",  alt: "Survey team" },
-  { src: "https://picsum.photos/seed/g8vp/400/300",  alt: "Safety training" },
+  { src: px(11645008, 1200), alt: "Solar panel installation site",  wide: true },
+  { src: px(11924298),       alt: "Electricity meter reading team" },
+  { src: px(7461108),        alt: "Construction field operations" },
+  { src: px(9462336),        alt: "Municipal cleaning crew" },
+  { src: px(9462743),        alt: "Professional housekeeping staff" },
+  { src: px(6070743, 1200),  alt: "Government infrastructure project", wide: true },
+  { src: px(5802821),        alt: "Field survey team" },
+  { src: px(8961034),        alt: "Worker safety training" },
 ];
 
 export default function Gallery() {

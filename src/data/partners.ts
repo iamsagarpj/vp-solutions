@@ -12,7 +12,7 @@ export const partners: Partner[] = [
     location: "Satara, Maharashtra",
     tags: ["Govt. Contracts", "Manpower Ops", "MSEB Relations", "Project Execution"],
     initials: "VP",
-    image: "https://picsum.photos/seed/partner1male/800/180",
+    image: "https://images.pexels.com/photos/7580761/pexels-photo-7580761.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
   {
     id: "priya",
@@ -25,6 +25,6 @@ export const partners: Partner[] = [
     location: "Pune, Maharashtra",
     tags: ["Business Development", "Solar EPC", "Private Sector", "Client Relations"],
     initials: "PD",
-    image: "https://picsum.photos/seed/partner2female/800/180",
+    image: "https://images.pexels.com/photos/9623645/pexels-photo-9623645.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
 ];

@@ -28,7 +28,7 @@ export default function About() {
           <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
             <div className="col-span-2 rounded-2xl overflow-hidden h-44 sm:h-52 lg:h-56 xl:h-64 relative shadow-xl">
               <Image
-                src="https://picsum.photos/seed/aboutteam/800/230"
+                src="https://images.pexels.com/photos/7640435/pexels-photo-7640435.jpeg?auto=compress&cs=tinysrgb&w=1200"
                 alt="VP Solutions team"
                 fill
                 className="object-cover"
@@ -37,7 +37,7 @@ export default function About() {
             </div>
             <div className="rounded-xl overflow-hidden h-36 sm:h-40 lg:h-44 xl:h-48 relative shadow-lg">
               <Image
-                src="https://picsum.photos/seed/aboutsite1/400/175"
+                src="https://images.pexels.com/photos/4956920/pexels-photo-4956920.jpeg?auto=compress&cs=tinysrgb&w=600"
                 alt="Field operations"
                 fill
                 className="object-cover"
@@ -45,7 +45,7 @@ export default function About() {
             </div>
             <div className="rounded-xl overflow-hidden h-36 sm:h-40 lg:h-44 xl:h-48 relative shadow-lg">
               <Image
-                src="https://picsum.photos/seed/aboutsite2/400/175"
+                src="https://images.pexels.com/photos/8853510/pexels-photo-8853510.jpeg?auto=compress&cs=tinysrgb&w=600"
                 alt="Solar installation"
                 fill
                 className="object-cover"

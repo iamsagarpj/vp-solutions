@@ -110,7 +110,7 @@ export default function Hero() {
           <div className="grid grid-cols-2 gap-2 sm:gap-2.5 md:gap-3 pt-8 sm:pt-4 lg:pt-0">
             <div className="col-span-2 rounded-xl sm:rounded-2xl overflow-hidden h-40 sm:h-52 lg:h-56 xl:h-60 relative shadow-xl">
               <Image
-                src="https://picsum.photos/seed/solarwork/800/230"
+                src="https://images.pexels.com/photos/11645008/pexels-photo-11645008.jpeg?auto=compress&cs=tinysrgb&w=1200"
                 alt="Solar EPC field operations"
                 fill
                 className="object-cover"
@@ -122,7 +122,7 @@ export default function Hero() {
             </div>
             <div className="rounded-xl overflow-hidden h-28 sm:h-36 lg:h-40 xl:h-44 relative shadow-lg">
               <Image
-                src="https://picsum.photos/seed/meterfield/400/155"
+                src="https://images.pexels.com/photos/11924298/pexels-photo-11924298.jpeg?auto=compress&cs=tinysrgb&w=600"
                 alt="Meter reading"
                 fill
                 className="object-cover"
@@ -134,7 +134,7 @@ export default function Hero() {
             </div>
             <div className="rounded-xl overflow-hidden h-28 sm:h-36 lg:h-40 xl:h-44 relative shadow-lg">
               <Image
-                src="https://picsum.photos/seed/govtinfra/400/155"
+                src="https://images.pexels.com/photos/6070743/pexels-photo-6070743.jpeg?auto=compress&cs=tinysrgb&w=600"
                 alt="Government projects"
                 fill
                 className="object-cover"
