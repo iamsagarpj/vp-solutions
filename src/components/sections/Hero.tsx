@@ -24,7 +24,7 @@ export default function Hero() {
         <div className="absolute top-1/3 right-[8%] w-px h-40 lg:h-56 bg-gradient-to-b from-transparent via-gold/35 to-transparent hidden sm:block" />
       </div>
 
-      <div className="relative z-10 max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-12 sm:py-16 lg:py-20 xl:py-24 grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-14 lg:gap-20 xl:gap-24 items-center w-full">
+      <div className="relative z-10 max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 pt-12 pb-16 sm:py-16 lg:py-20 xl:py-24 grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-14 lg:gap-20 xl:gap-24 items-center w-full">
 
         {/* Left */}
         <motion.div
@@ -86,29 +86,29 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Right – Photo grid (hidden on mobile, shown sm+) */}
+        {/* Right – Photo grid (all breakpoints) */}
         <motion.div
-          className="relative hidden sm:block"
+          className="relative mt-2 sm:mt-0 mx-1 sm:mx-0"
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
           {/* Floating badge top */}
-          <div className="absolute -top-4 -right-4 z-10 bg-white rounded-2xl px-3 sm:px-4 py-2.5 sm:py-3 shadow-xl flex items-center gap-2.5 sm:gap-3">
-            <div className="w-8 sm:w-9 h-8 sm:h-9 rounded-xl bg-gold/10 flex items-center justify-center">
-              <Zap size={15} className="text-gold" />
+          <div className="absolute -top-3 right-0 sm:-top-4 sm:-right-4 z-10 bg-white rounded-xl sm:rounded-2xl px-3 sm:px-4 py-2 sm:py-3 shadow-xl flex items-center gap-2 sm:gap-3">
+            <div className="w-7 sm:w-9 h-7 sm:h-9 rounded-lg sm:rounded-xl bg-gold/10 flex items-center justify-center">
+              <Zap size={13} className="text-gold" />
             </div>
             <div>
-              <strong className="block text-[12px] sm:text-[13px] font-extrabold text-navy font-heading">
+              <strong className="block text-[11px] sm:text-[13px] font-extrabold text-navy font-heading">
                 MSCB Certified Partner
               </strong>
-              <span className="text-[10px] sm:text-[11px] text-slate-400">Active Since 2013</span>
+              <span className="text-[9px] sm:text-[11px] text-slate-400">Active Since 2013</span>
             </div>
           </div>
 
           {/* Photo grid */}
-          <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
-            <div className="col-span-2 rounded-2xl overflow-hidden h-44 sm:h-52 lg:h-56 xl:h-60 relative shadow-xl">
+          <div className="grid grid-cols-2 gap-2 sm:gap-2.5 md:gap-3 pt-8 sm:pt-4 lg:pt-0">
+            <div className="col-span-2 rounded-xl sm:rounded-2xl overflow-hidden h-40 sm:h-52 lg:h-56 xl:h-60 relative shadow-xl">
               <Image
                 src="https://picsum.photos/seed/solarwork/800/230"
                 alt="Solar EPC field operations"
@@ -116,11 +116,11 @@ export default function Hero() {
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/55 to-transparent" />
-              <span className="absolute bottom-3 left-4 text-white text-[10px] sm:text-[11px] font-bold tracking-widest uppercase opacity-90">
+              <span className="absolute bottom-2.5 left-3 sm:bottom-3 sm:left-4 text-white text-[9px] sm:text-[11px] font-bold tracking-widest uppercase opacity-90">
                 Solar EPC · Field Operations
               </span>
             </div>
-            <div className="rounded-xl overflow-hidden h-32 sm:h-36 lg:h-40 xl:h-44 relative shadow-lg">
+            <div className="rounded-xl overflow-hidden h-28 sm:h-36 lg:h-40 xl:h-44 relative shadow-lg">
               <Image
                 src="https://picsum.photos/seed/meterfield/400/155"
                 alt="Meter reading"
@@ -128,11 +128,11 @@ export default function Hero() {
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/55 to-transparent" />
-              <span className="absolute bottom-2.5 left-3 text-white text-[10px] sm:text-[11px] font-bold tracking-widest uppercase opacity-90">
+              <span className="absolute bottom-2 left-2.5 sm:bottom-2.5 sm:left-3 text-white text-[9px] sm:text-[11px] font-bold tracking-widest uppercase opacity-90">
                 Meter Reading
               </span>
             </div>
-            <div className="rounded-xl overflow-hidden h-32 sm:h-36 lg:h-40 xl:h-44 relative shadow-lg">
+            <div className="rounded-xl overflow-hidden h-28 sm:h-36 lg:h-40 xl:h-44 relative shadow-lg">
               <Image
                 src="https://picsum.photos/seed/govtinfra/400/155"
                 alt="Government projects"
@@ -140,19 +140,19 @@ export default function Hero() {
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/55 to-transparent" />
-              <span className="absolute bottom-2.5 left-3 text-white text-[10px] sm:text-[11px] font-bold tracking-widest uppercase opacity-90">
+              <span className="absolute bottom-2 left-2.5 sm:bottom-2.5 sm:left-3 text-white text-[9px] sm:text-[11px] font-bold tracking-widest uppercase opacity-90">
                 Govt. Projects
               </span>
             </div>
           </div>
 
           {/* Floating badge bottom */}
-          <div className="absolute -bottom-4 -left-4 z-10 bg-navy rounded-2xl px-3 sm:px-4 py-2.5 sm:py-3 shadow-xl flex items-center gap-2 sm:gap-2.5">
-            <div className="w-7 sm:w-8 h-7 sm:h-8 rounded-lg bg-gold/20 flex items-center justify-center">
-              <Users size={13} className="text-gold-light" />
+          <div className="absolute -bottom-3 left-0 sm:-bottom-4 sm:-left-4 z-10 bg-navy rounded-xl sm:rounded-2xl px-3 sm:px-4 py-2 sm:py-3 shadow-xl flex items-center gap-2 sm:gap-2.5">
+            <div className="w-6 sm:w-8 h-6 sm:h-8 rounded-lg bg-gold/20 flex items-center justify-center">
+              <Users size={11} className="text-gold-light" />
             </div>
             <div>
-              <strong className="block text-[12px] sm:text-[13px] font-extrabold text-white font-heading">
+              <strong className="block text-[11px] sm:text-[13px] font-extrabold text-white font-heading">
                 1000+ Active Staff
               </strong>
               <span className="text-[9px] sm:text-[10px] text-white/45">Pan Maharashtra</span>
