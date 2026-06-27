@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
+import { useLanguage } from "@/context/LanguageContext";
 
 const contactItems = [
   { icon: MapPin,  label: "Registered Office", value: "Shop No 4, Kapila Park, Maharashtra 415001" },
@@ -32,6 +33,7 @@ function encode(data: Record<string, string>) {
 }
 
 export default function Contact() {
+  const { tr } = useLanguage();
   const [status, setStatus] = useState<Status>("idle");
   const [fields, setFields] = useState({
     name: "",
@@ -75,8 +77,8 @@ export default function Contact() {
       <div className="max-w-screen-2xl mx-auto">
         <SectionHeader
           centered
-          label="Get In Touch"
-          title="Let's Discuss Your Project"
+          label={tr("section.contact.label")}
+          title={tr("section.contact.title")}
           subtitle="Government tender, private facility requirement, or a large-scale manpower contract — our team responds within 24 hours."
         />
 
@@ -141,7 +143,7 @@ export default function Contact() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-3 sm:mb-4">
               <div>
                 <label className="block text-[10.5px] sm:text-[11.5px] font-bold text-navy uppercase tracking-wide mb-1.5">
-                  Your Name *
+                  {tr("contact.name")}
                 </label>
                 <input
                   required
@@ -155,7 +157,7 @@ export default function Contact() {
               </div>
               <div>
                 <label className="block text-[10.5px] sm:text-[11.5px] font-bold text-navy uppercase tracking-wide mb-1.5">
-                  Organisation
+                  {tr("contact.org")}
                 </label>
                 <input
                   type="text"
@@ -172,7 +174,7 @@ export default function Contact() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-3 sm:mb-4">
               <div>
                 <label className="block text-[10.5px] sm:text-[11.5px] font-bold text-navy uppercase tracking-wide mb-1.5">
-                  Mobile
+                  {tr("contact.mobile")}
                 </label>
                 <input
                   type="tel"
@@ -185,7 +187,7 @@ export default function Contact() {
               </div>
               <div>
                 <label className="block text-[10.5px] sm:text-[11.5px] font-bold text-navy uppercase tracking-wide mb-1.5">
-                  Email
+                  {tr("contact.email")}
                 </label>
                 <input
                   type="email"
@@ -201,7 +203,7 @@ export default function Contact() {
             {/* Service */}
             <div className="mb-3 sm:mb-4">
               <label className="block text-[10.5px] sm:text-[11.5px] font-bold text-navy uppercase tracking-wide mb-1.5">
-                Service Required
+                {tr("contact.service")}
               </label>
               <select
                 name="service"
@@ -219,7 +221,7 @@ export default function Contact() {
             {/* Message */}
             <div className="mb-4 sm:mb-5">
               <label className="block text-[10.5px] sm:text-[11.5px] font-bold text-navy uppercase tracking-wide mb-1.5">
-                Message / Project Brief
+                {tr("contact.message")}
               </label>
               <textarea
                 rows={4}
@@ -234,7 +236,7 @@ export default function Contact() {
             {/* Success / Error banners */}
             {status === "success" && (
               <div className="mb-4 px-4 py-3 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-700 text-[13px] font-medium">
-                Inquiry submitted! We will contact you within 24 hours.
+                {tr("contact.success")}
               </div>
             )}
             {status === "error" && (
@@ -248,7 +250,7 @@ export default function Contact() {
               disabled={status === "submitting"}
               className="w-full bg-navy text-white font-bold py-3 sm:py-3.5 rounded-lg hover:bg-gold transition-colors text-[13px] sm:text-[14px] disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              {status === "submitting" ? "Submitting..." : "Submit Inquiry"}
+              {status === "submitting" ? tr("contact.submitting") : tr("contact.submit")}
             </button>
           </form>
         </div>

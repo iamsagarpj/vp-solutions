@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import SectionHeader from "@/components/ui/SectionHeader";
+import { useLanguage } from "@/context/LanguageContext";
 
 const px = (id: number, w = 800) =>
   `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
@@ -19,6 +20,7 @@ const galleryImages = [
 ];
 
 export default function Gallery() {
+  const { tr } = useLanguage();
   return (
     <section
       id="gallery"
@@ -27,8 +29,8 @@ export default function Gallery() {
       <div className="max-w-screen-2xl mx-auto">
         <SectionHeader
           centered
-          label="Gallery"
-          title="Our Work in Action"
+          label={tr("section.gallery.label")}
+          title={tr("section.gallery.title")}
           subtitle="A glimpse of VP Solutions' operations across Maharashtra."
         />
 

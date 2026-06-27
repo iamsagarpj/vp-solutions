@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ShieldCheck, Users, Zap, Award } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
+import { useLanguage } from "@/context/LanguageContext";
 
 const highlights = [
   { icon: ShieldCheck, label: "Govt-Registered", sub: "ESIC, PF, Labour Laws" },
@@ -13,6 +14,7 @@ const highlights = [
 ];
 
 export default function About() {
+  const { tr } = useLanguage();
   return (
     <section id="about" className="bg-white py-16 sm:py-20 lg:py-24 xl:py-28 px-4 sm:px-6 lg:px-8 xl:px-12">
       <div className="max-w-screen-2xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-14 lg:gap-16 xl:gap-20 items-center">
@@ -71,8 +73,8 @@ export default function About() {
           className="mt-4 sm:mt-0"
         >
           <SectionHeader
-            label="Who We Are"
-            title="Maharashtra's Trusted Workforce & Infrastructure Partner"
+            label={tr("section.about.label")}
+            title={tr("section.about.title")}
             subtitle="Founded in 2005, VP Solutions has grown from a local manpower contractor into one of Maharashtra's most trusted multi-service companies — delivering government-grade reliability across electricity boards, municipalities, and private enterprises."
           />
 

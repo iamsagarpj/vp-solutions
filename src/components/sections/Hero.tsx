@@ -3,15 +3,17 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ShieldCheck, Users, Building2, Zap } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
-const trustItems = [
-  { icon: ShieldCheck, label: "ISO Certified" },
-  { icon: Users, label: "1000+ Workforce" },
-  { icon: Building2, label: "50+ Govt. Projects" },
-  { icon: Zap, label: "MSEB Empanelled" },
+const trustKeys = [
+  { icon: ShieldCheck, key: "hero.trust1" },
+  { icon: Users,       key: "hero.trust2" },
+  { icon: Building2,   key: "hero.trust3" },
+  { icon: Zap,         key: "hero.trust4" },
 ];
 
 export default function Hero() {
+  const { tr } = useLanguage();
   return (
     <section
       id="home"
@@ -35,21 +37,19 @@ export default function Hero() {
           <div className="inline-flex items-center gap-2 bg-navy/[0.08] border border-navy/[0.12] px-3 sm:px-4 py-1.5 rounded-full mb-5 sm:mb-6">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse flex-shrink-0" />
             <span className="text-[10px] sm:text-[11px] lg:text-[12px] font-semibold text-navy-mid tracking-[1.2px] uppercase leading-tight">
-              Trusted Since 2005 — 20 Years of Excellence
+              {tr("hero.badge")}
             </span>
           </div>
 
           <h1 className="font-heading text-[30px] sm:text-[38px] lg:text-[46px] xl:text-[52px] 2xl:text-[58px] font-extrabold text-navy leading-[1.1] mb-4 sm:mb-5">
-            Empowering{" "}
-            <span className="text-[#1B6CA8]">Government</span> &{" "}
-            <span className="text-gold">Corporate</span>{" "}
-            Infrastructure with Skilled Workforce
+            {tr("hero.h1a")}{" "}
+            <span className="text-[#1B6CA8]">{tr("hero.h1b")}</span> &{" "}
+            <span className="text-gold">{tr("hero.h1c")}</span>{" "}
+            {tr("hero.h1d")}
           </h1>
 
           <p className="text-sm sm:text-base xl:text-[17px] text-slate-500 leading-relaxed mb-7 sm:mb-9 max-w-xl">
-            VP Solutions delivers end-to-end manpower, solar EPC, facility management,
-            and smart infrastructure services across government departments, electricity
-            boards, municipalities, and private enterprises.
+            {tr("hero.desc")}
           </p>
 
           <div className="flex gap-2.5 sm:gap-3 flex-wrap">
@@ -57,30 +57,30 @@ export default function Hero() {
               href="#services"
               className="bg-navy text-white font-bold text-sm px-5 sm:px-7 py-3 sm:py-3.5 rounded-lg hover:bg-navy-light transition-all hover:-translate-y-0.5 hover:shadow-lg"
             >
-              Explore Services
+              {tr("hero.cta1")}
             </a>
             <a
               href="#projects"
               className="bg-gold text-white font-bold text-sm px-5 sm:px-7 py-3 sm:py-3.5 rounded-lg hover:bg-gold-light transition-all hover:-translate-y-0.5 hover:shadow-lg"
             >
-              Our Projects
+              {tr("hero.cta2")}
             </a>
             <a
               href="#contact"
               className="border border-navy/25 text-navy font-semibold text-sm px-5 sm:px-7 py-3 sm:py-3.5 rounded-lg hover:bg-navy hover:text-white transition-all"
             >
-              Get a Quote
+              {tr("hero.cta3")}
             </a>
           </div>
 
           <div className="flex gap-4 sm:gap-5 mt-7 sm:mt-9 flex-wrap">
-            {trustItems.map(({ icon: Icon, label }) => (
+            {trustKeys.map(({ icon: Icon, key }) => (
               <div
-                key={label}
+                key={key}
                 className="flex items-center gap-2 text-slate-500 text-[12px] sm:text-[13px] font-medium"
               >
                 <span className="w-2 h-2 rounded-full bg-gold flex-shrink-0" />
-                {label}
+                {tr(key)}
               </div>
             ))}
           </div>

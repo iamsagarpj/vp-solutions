@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ShieldCheck, Award, FileCheck, BadgeCheck, Landmark } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
+import { useLanguage } from "@/context/LanguageContext";
 
 const certs = [
   { icon: ShieldCheck, title: "ISO 9001:2015", sub: "Quality Management System" },
@@ -13,6 +14,7 @@ const certs = [
 ];
 
 export default function Certifications() {
+  const { tr } = useLanguage();
   return (
     <section
       id="certifications"
@@ -21,8 +23,8 @@ export default function Certifications() {
       <div className="max-w-screen-2xl mx-auto">
         <SectionHeader
           centered
-          label="Compliance & Certifications"
-          title="Fully Compliant. Fully Trusted."
+          label={tr("section.certs.label")}
+          title={tr("section.certs.title")}
           subtitle="VP Solutions operates with complete statutory compliance — built for government-grade accountability."
         />
 

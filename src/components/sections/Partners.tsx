@@ -4,16 +4,18 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
+import { useLanguage } from "@/context/LanguageContext";
 import { partners } from "@/data/partners";
 
 export default function Partners() {
+  const { tr } = useLanguage();
   return (
     <section id="partners" className="bg-slate-50 py-16 sm:py-20 lg:py-24 xl:py-28 px-4 sm:px-6 lg:px-8 xl:px-12">
       <div className="max-w-screen-2xl mx-auto">
         <SectionHeader
           centered
-          label="Leadership"
-          title="The People Behind VP Solutions"
+          label={tr("section.partners.label")}
+          title={tr("section.partners.title")}
           subtitle="Two decades of growth driven by experienced leadership committed to operational excellence across government and private sectors."
         />
 

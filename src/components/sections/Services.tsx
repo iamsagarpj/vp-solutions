@@ -6,6 +6,7 @@ import {
   Sun, Users, BarChart2, Building2, Landmark, Sparkles, FileText, Map, Settings,
 } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
+import { useLanguage } from "@/context/LanguageContext";
 import { services } from "@/data/services";
 
 const iconMap: Record<string, React.ElementType> = {
@@ -13,13 +14,14 @@ const iconMap: Record<string, React.ElementType> = {
 };
 
 export default function Services() {
+  const { tr } = useLanguage();
   return (
     <section id="services" className="bg-slate-50 py-16 sm:py-20 lg:py-24 xl:py-28 px-4 sm:px-6 lg:px-8 xl:px-12">
       <div className="max-w-screen-2xl mx-auto">
         <SectionHeader
           centered
-          label="What We Do"
-          title="Comprehensive Services Across Sectors"
+          label={tr("section.services.label")}
+          title={tr("section.services.title")}
           subtitle="From government utility operations to private facility management, VP Solutions offers end-to-end workforce and infrastructure solutions."
         />
 

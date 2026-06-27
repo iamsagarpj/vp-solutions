@@ -5,6 +5,7 @@ import {
   ShieldCheck, BadgeCheck, MapPin, BarChart3, Zap, Lock, UserCheck, Cpu, Star,
 } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
+import { useLanguage } from "@/context/LanguageContext";
 import { whyItems } from "@/data/whyus";
 
 const iconMap: Record<string, React.ElementType> = {
@@ -12,14 +13,15 @@ const iconMap: Record<string, React.ElementType> = {
 };
 
 export default function WhyUs() {
+  const { tr } = useLanguage();
   return (
     <section id="whyus" className="bg-navy py-16 sm:py-20 lg:py-24 xl:py-28 px-4 sm:px-6 lg:px-8 xl:px-12">
       <div className="max-w-screen-2xl mx-auto">
         <SectionHeader
           centered
           light
-          label="Why VP Solutions"
-          title="What Sets Us Apart"
+          label={tr("section.whyus.label")}
+          title={tr("section.whyus.title")}
           subtitle="Built for government-scale operations. Trusted by private sector leaders."
         />
 

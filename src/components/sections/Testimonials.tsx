@@ -2,17 +2,19 @@
 
 import { motion } from "framer-motion";
 import SectionHeader from "@/components/ui/SectionHeader";
+import { useLanguage } from "@/context/LanguageContext";
 import { testimonials } from "@/data/testimonials";
 
 export default function Testimonials() {
+  const { tr } = useLanguage();
   return (
     <section id="testimonials" className="bg-navy py-16 sm:py-20 lg:py-24 xl:py-28 px-4 sm:px-6 lg:px-8 xl:px-12">
       <div className="max-w-screen-2xl mx-auto">
         <SectionHeader
           centered
           light
-          label="Client Testimonials"
-          title="What Our Clients Say"
+          label={tr("section.testimonials.label")}
+          title={tr("section.testimonials.title")}
           subtitle="Hear directly from government officers and private sector leaders who rely on VP Solutions."
         />
 

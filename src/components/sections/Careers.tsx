@@ -3,9 +3,11 @@
 import { motion } from "framer-motion";
 import { Briefcase, MapPin, Upload } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
+import { useLanguage } from "@/context/LanguageContext";
 import { jobs } from "@/data/jobs";
 
 export default function Careers() {
+  const { tr } = useLanguage();
   return (
     <section
       id="careers"
@@ -13,8 +15,8 @@ export default function Careers() {
     >
       <div className="max-w-screen-2xl mx-auto">
         <SectionHeader
-          label="Careers"
-          title="Join the VP Solutions Team"
+          label={tr("section.careers.label")}
+          title={tr("section.careers.title")}
           subtitle="We're always looking for disciplined, motivated individuals to grow with us across Maharashtra."
         />
 

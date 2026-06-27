@@ -2,16 +2,18 @@
 
 import { motion } from "framer-motion";
 import SectionHeader from "@/components/ui/SectionHeader";
+import { useLanguage } from "@/context/LanguageContext";
 import { timelineItems } from "@/data/timeline";
 
 export default function Timeline() {
+  const { tr } = useLanguage();
   return (
     <section id="timeline" className="bg-white py-16 sm:py-20 lg:py-24 xl:py-28 px-4 sm:px-6 lg:px-8 xl:px-12">
       <div className="max-w-screen-2xl mx-auto">
         <SectionHeader
           centered
-          label="Our Journey"
-          title="Two Decades of Growth"
+          label={tr("section.timeline.label")}
+          title={tr("section.timeline.title")}
           subtitle="From a small manpower company to Maharashtra's trusted multi-service partner."
         />
 

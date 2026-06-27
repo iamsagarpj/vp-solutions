@@ -5,21 +5,24 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Logo from "@/components/ui/Logo";
+import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
+import { useLanguage } from "@/context/LanguageContext";
 
-const navLinks = [
-  { label: "Home",     href: "#home"     },
-  { label: "About",    href: "#about"    },
-  { label: "Services", href: "#services" },
-  { label: "Projects", href: "#projects" },
-  { label: "Partners", href: "#partners" },
-  { label: "Clients",  href: "#clients"  },
-  { label: "Careers",  href: "#careers"  },
-  { label: "Gallery",  href: "#gallery"  },
+const navLinkKeys = [
+  { key: "nav.home",     href: "#home"     },
+  { key: "nav.about",    href: "#about"    },
+  { key: "nav.services", href: "#services" },
+  { key: "nav.projects", href: "#projects" },
+  { key: "nav.partners", href: "#partners" },
+  { key: "nav.clients",  href: "#clients"  },
+  { key: "nav.careers",  href: "#careers"  },
+  { key: "nav.gallery",  href: "#gallery"  },
 ];
 
 export default function Navbar() {
   const [open,   setOpen]   = useState(false);
   const [active, setActive] = useState("home");
+  const { tr } = useLanguage();
 
   useEffect(() => {
     const sections = document.querySelectorAll("section[id]");
@@ -75,7 +78,7 @@ export default function Navbar() {
 
         {/* ── Desktop links (lg+) ── */}
         <div className="hidden lg:flex items-center gap-0.5 xl:gap-1">
-          {navLinks.map((l) => (
+          {navLinkKeys.map((l) => (
             <a
               key={l.href}
               href={l.href}
@@ -91,13 +94,13 @@ export default function Navbar() {
                   : undefined
               }
             >
-              {l.label}
+              {tr(l.key)}
             </a>
           ))}
 
           {/* Divider */}
           <div
-            className="w-px h-5 mx-2 hidden xl:block"
+            className="w-px h-5 mx-1.5 hidden xl:block"
             style={{ background: "rgba(37,99,235,0.35)" }}
           />
 
@@ -117,25 +120,33 @@ export default function Navbar() {
                 "0 0 0 1px rgba(96,165,250,0.25)";
             }}
           >
-            Contact Us
+            {tr("nav.contact")}
           </a>
+
+          {/* Language switcher */}
+          <div className="ml-2">
+            <LanguageSwitcher />
+          </div>
         </div>
 
-        {/* ── Mobile/Tablet hamburger ── */}
-        <button
-          className="lg:hidden p-2 rounded-lg transition-colors"
-          style={{ color: "#93c5fd" }}
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-          onMouseEnter={(e) =>
-            ((e.currentTarget as HTMLElement).style.background = "rgba(37,99,235,0.18)")
-          }
-          onMouseLeave={(e) =>
-            ((e.currentTarget as HTMLElement).style.background = "transparent")
-          }
-        >
-          {open ? <X size={22} /> : <Menu size={22} />}
-        </button>
+        {/* ── Mobile/Tablet right side ── */}
+        <div className="lg:hidden flex items-center gap-2">
+          <LanguageSwitcher />
+          <button
+            className="p-2 rounded-lg transition-colors"
+            style={{ color: "#93c5fd" }}
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
+            onMouseEnter={(e) =>
+              ((e.currentTarget as HTMLElement).style.background = "rgba(37,99,235,0.18)")
+            }
+            onMouseLeave={(e) =>
+              ((e.currentTarget as HTMLElement).style.background = "transparent")
+            }
+          >
+            {open ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </div>
 
       {/* ── Mobile / Tablet dropdown ── */}
@@ -148,7 +159,7 @@ export default function Navbar() {
           }}
         >
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 mb-3">
-            {navLinks.map((l) => (
+            {navLinkKeys.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
@@ -160,7 +171,7 @@ export default function Navbar() {
                     : { color: "rgba(255,255,255,0.75)" }
                 }
               >
-                {l.label}
+                {tr(l.key)}
               </a>
             ))}
           </div>
@@ -173,7 +184,7 @@ export default function Navbar() {
               background: "linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)",
             }}
           >
-            Contact Us
+            {tr("nav.contact")}
           </a>
         </div>
       )}

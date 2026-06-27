@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Calendar } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
+import { useLanguage } from "@/context/LanguageContext";
 import { projects } from "@/data/projects";
 import { Project } from "@/types";
 
@@ -19,6 +20,7 @@ const filters: { label: string; value: Category }[] = [
 ];
 
 export default function Projects() {
+  const { tr } = useLanguage();
   const [active, setActive] = useState<Category>("all");
   const filtered = projects.filter(
     (p: Project) => active === "all" || p.category === active
@@ -28,8 +30,8 @@ export default function Projects() {
     <section id="projects" className="bg-white py-16 sm:py-20 lg:py-24 xl:py-28 px-4 sm:px-6 lg:px-8 xl:px-12">
       <div className="max-w-screen-2xl mx-auto">
         <SectionHeader
-          label="Our Work"
-          title="Proven Track Record Across Sectors"
+          label={tr("section.projects.label")}
+          title={tr("section.projects.title")}
           subtitle="Delivering complex projects for government bodies and private clients with precision and scale."
         />
 

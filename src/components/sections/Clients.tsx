@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import SectionHeader from "@/components/ui/SectionHeader";
+import { useLanguage } from "@/context/LanguageContext";
 
 const clients = [
   { name: "MSEB", full: "Maharashtra State Co-operative Bank" },
@@ -17,13 +18,14 @@ const clients = [
 ];
 
 export default function Clients() {
+  const { tr } = useLanguage();
   return (
     <section id="clients" className="bg-slate-50 py-16 sm:py-20 lg:py-24 xl:py-28 px-4 sm:px-6 lg:px-8 xl:px-12">
       <div className="max-w-screen-2xl mx-auto">
         <SectionHeader
           centered
-          label="Our Clients"
-          title="Trusted by Government & Private Leaders"
+          label={tr("section.clients.label")}
+          title={tr("section.clients.title")}
           subtitle="From electricity boards to Smart City missions — VP Solutions is the partner of choice across Maharashtra."
         />
 
