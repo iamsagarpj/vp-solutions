@@ -3,35 +3,19 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import {
-  Sun,
-  Users,
-  BarChart2,
-  Building2,
-  Landmark,
-  Sparkles,
-  FileText,
-  Map,
-  Settings,
+  Sun, Users, BarChart2, Building2, Landmark, Sparkles, FileText, Map, Settings,
 } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { services } from "@/data/services";
 
 const iconMap: Record<string, React.ElementType> = {
-  Sun,
-  Users,
-  BarChart2,
-  Building2,
-  Landmark,
-  Sparkles,
-  FileText,
-  Map,
-  Settings,
+  Sun, Users, BarChart2, Building2, Landmark, Sparkles, FileText, Map, Settings,
 };
 
 export default function Services() {
   return (
-    <section id="services" className="bg-slate-50 py-24 px-8">
-      <div className="max-w-7xl mx-auto">
+    <section id="services" className="bg-slate-50 py-16 sm:py-20 lg:py-24 xl:py-28 px-4 sm:px-6 lg:px-8 xl:px-12">
+      <div className="max-w-screen-2xl mx-auto">
         <SectionHeader
           centered
           label="What We Do"
@@ -39,7 +23,7 @@ export default function Services() {
           subtitle="From government utility operations to private facility management, VP Solutions offers end-to-end workforce and infrastructure solutions."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
           {services.map((svc, i) => {
             const Icon = iconMap[svc.icon] || Settings;
             return (
@@ -52,7 +36,7 @@ export default function Services() {
                 className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 cursor-pointer relative"
               >
                 <div className="absolute top-0 left-0 h-[3px] w-0 bg-gold group-hover:w-full transition-all duration-500" />
-                <div className="relative h-44 overflow-hidden">
+                <div className="relative h-40 sm:h-44 lg:h-44 xl:h-48 overflow-hidden">
                   <Image
                     src={svc.image}
                     alt={svc.title}
@@ -64,14 +48,14 @@ export default function Services() {
                     {svc.tag}
                   </span>
                 </div>
-                <div className="p-5">
-                  <div className="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center mb-3">
-                    <Icon size={18} className="text-gold" />
+                <div className="p-4 sm:p-5">
+                  <div className="w-9 sm:w-10 h-9 sm:h-10 rounded-xl bg-gold/10 flex items-center justify-center mb-3">
+                    <Icon size={17} className="text-gold" />
                   </div>
-                  <h3 className="font-heading font-bold text-navy text-[15px] mb-2">
+                  <h3 className="font-heading font-bold text-navy text-[14px] sm:text-[15px] mb-2">
                     {svc.title}
                   </h3>
-                  <p className="text-[13px] text-slate-500 leading-relaxed">
+                  <p className="text-[12px] sm:text-[13px] text-slate-500 leading-relaxed">
                     {svc.description}
                   </p>
                   <a

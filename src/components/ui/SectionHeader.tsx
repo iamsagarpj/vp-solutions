@@ -18,10 +18,10 @@ export default function SectionHeader({
   className,
 }: SectionHeaderProps) {
   return (
-    <div className={cn("mb-14", centered && "text-center", className)}>
+    <div className={cn("mb-10 lg:mb-14", centered && "text-center", className)}>
       <p
         className={cn(
-          "text-[11px] font-bold tracking-[3px] uppercase mb-2.5",
+          "text-[10px] sm:text-[11px] font-bold tracking-[3px] uppercase mb-2 sm:mb-2.5",
           light ? "text-gold-light" : "text-gold"
         )}
       >
@@ -29,7 +29,7 @@ export default function SectionHeader({
       </p>
       <h2
         className={cn(
-          "font-heading text-4xl font-extrabold leading-tight mb-3.5",
+          "font-heading text-2xl sm:text-3xl lg:text-4xl xl:text-[42px] 2xl:text-[46px] font-extrabold leading-tight mb-3 sm:mb-3.5",
           light ? "text-white" : "text-navy"
         )}
       >
@@ -38,7 +38,7 @@ export default function SectionHeader({
       {subtitle && (
         <p
           className={cn(
-            "text-base leading-relaxed max-w-2xl",
+            "text-sm sm:text-base leading-relaxed max-w-2xl",
             light ? "text-white/50" : "text-slate-500",
             centered && "mx-auto"
           )}

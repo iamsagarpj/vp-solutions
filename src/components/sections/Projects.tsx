@@ -25,20 +25,21 @@ export default function Projects() {
   );
 
   return (
-    <section id="projects" className="bg-white py-24 px-8">
-      <div className="max-w-7xl mx-auto">
+    <section id="projects" className="bg-white py-16 sm:py-20 lg:py-24 xl:py-28 px-4 sm:px-6 lg:px-8 xl:px-12">
+      <div className="max-w-screen-2xl mx-auto">
         <SectionHeader
           label="Our Work"
           title="Proven Track Record Across Sectors"
           subtitle="Delivering complex projects for government bodies and private clients with precision and scale."
         />
 
-        <div className="flex gap-2.5 mb-10 flex-wrap">
+        {/* Filter pills — horizontally scrollable on mobile */}
+        <div className="flex gap-2 sm:gap-2.5 mb-8 sm:mb-10 overflow-x-auto pb-2 sm:pb-0 scrollbar-hide -mx-4 sm:mx-0 px-4 sm:px-0">
           {filters.map((f) => (
             <button
               key={f.value}
               onClick={() => setActive(f.value)}
-              className={`px-5 py-2 rounded-full text-[13px] font-semibold border transition-all ${
+              className={`px-4 sm:px-5 py-2 rounded-full text-[12px] sm:text-[13px] font-semibold border transition-all whitespace-nowrap flex-shrink-0 ${
                 active === f.value
                   ? "bg-navy text-white border-navy"
                   : "bg-white text-slate-500 border-slate-200 hover:bg-navy hover:text-white hover:border-navy"
@@ -49,7 +50,7 @@ export default function Projects() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
           <AnimatePresence>
             {filtered.map((p, i) => (
               <motion.div
@@ -58,9 +59,9 @@ export default function Projects() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.96 }}
                 transition={{ delay: i * 0.06 }}
-                className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-100"
               >
-                <div className="relative h-52 overflow-hidden">
+                <div className="relative h-48 sm:h-52 xl:h-56 overflow-hidden">
                   <Image
                     src={p.image}
                     alt={p.title}
@@ -74,21 +75,19 @@ export default function Projects() {
                     {p.sector}
                   </span>
                 </div>
-                <div className="p-5">
-                  <h3 className="font-heading font-bold text-navy text-[15px] mb-2.5">
+                <div className="p-4 sm:p-5">
+                  <h3 className="font-heading font-bold text-navy text-[14px] sm:text-[15px] mb-2 sm:mb-2.5">
                     {p.title}
                   </h3>
-                  <div className="flex gap-4 mb-2.5 flex-wrap">
-                    <span className="flex items-center gap-1.5 text-[12px] text-slate-400">
-                      <MapPin size={12} />
-                      {p.location}
+                  <div className="flex gap-3 sm:gap-4 mb-2 sm:mb-2.5 flex-wrap">
+                    <span className="flex items-center gap-1.5 text-[11px] sm:text-[12px] text-slate-400">
+                      <MapPin size={11} />{p.location}
                     </span>
-                    <span className="flex items-center gap-1.5 text-[12px] text-slate-400">
-                      <Calendar size={12} />
-                      {p.duration}
+                    <span className="flex items-center gap-1.5 text-[11px] sm:text-[12px] text-slate-400">
+                      <Calendar size={11} />{p.duration}
                     </span>
                   </div>
-                  <p className="text-[13px] text-slate-500 leading-relaxed">
+                  <p className="text-[12px] sm:text-[13px] text-slate-500 leading-relaxed">
                     {p.description}
                   </p>
                 </div>
